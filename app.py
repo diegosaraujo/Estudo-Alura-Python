@@ -13,7 +13,7 @@ def menu():
 	nomes = []
 	escolha = ''
 	while(escolha != '0'):
-		print ('Digite 1 para cadastrar, 0 para terminar')
+		print ('Digite 1 para cadastrar, 2 para listar os nomes e 0 para terminar')
 		escolha = input()
 
 		if (escolha =='1'):
@@ -21,5 +21,16 @@ def menu():
 
 		if (escolha == '2'):
 			listar(nomes)
+
+def frase():
+	frase = 'Python'
+	contador = 0
+	while(contador < len(frase)):
+	    print (frase[contador])
+	    contador+=1
+	print ('FIM')
+
+
+frase()
 
 menu()
