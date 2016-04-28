@@ -23,11 +23,21 @@ def alterar(nomes):
         nome_novo = input()
         nomes[posicao] = nome_novo
 
+def procurar(nomes):
+	print ('Digite o nome que deseja procurar')
+	nome_busca = input()
+
+	if(nome_busca in nomes):
+		print (('O nome %s EXISTE na lista') %(nome_busca))
+	else:
+		print (('O nome %s NÃO existe na lista') %(nome_busca))
+
+
 def menu():
 	nomes = []
 	escolha = ''
 	while(escolha != '0'):
-		print ('1 Cadastrar / 2 Listar / 3 Remover / 4 Alterar / 0 Terminar')
+		print ('1 Cadastrar / 2 Listar / 3 Remover / 4 Alterar / 5 Buscar / 0 Terminar')
 		escolha = input()
 
 		if (escolha =='1'):
@@ -41,5 +51,8 @@ def menu():
 
 		if (escolha == '4'):
 			alterar(nomes)
+
+		if (escolha == '5'):
+			procurar(nomes)
 
 menu()
