@@ -9,11 +9,16 @@ def cadastrar(nomes):
 	nome = input()
 	nomes.append(nome)
 
+def remover(nomes):
+	print ('Digite o nome que deseja remover')
+	nome = input()
+	nomes.remove(nome)
+
 def menu():
 	nomes = []
 	escolha = ''
 	while(escolha != '0'):
-		print ('Digite 1 para cadastrar, 2 para listar os nomes e 0 para terminar')
+		print ('Digite 1 para cadastrar / 2 para listar / 3 para remover / 0 para terminar')
 		escolha = input()
 
 		if (escolha =='1'):
@@ -22,15 +27,7 @@ def menu():
 		if (escolha == '2'):
 			listar(nomes)
 
-def frase():
-	frase = 'Python'
-	contador = 0
-	while(contador < len(frase)):
-	    print (frase[contador])
-	    contador+=1
-	print ('FIM')
-
-
-frase()
+		if (escolha == '3'):
+			remover(nomes)
 
 menu()
