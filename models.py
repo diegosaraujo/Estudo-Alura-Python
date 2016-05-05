@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-class Perfil():
+class Perfil(object):
    'Classe padrão para perfis de usuários'
 
    def __init__(self, nome, telefone, empresa):
@@ -17,6 +17,23 @@ class Perfil():
 
    def numero_curtidas(self):
       print (('Você possui %s curtida(s)') % (self.__curtidas))
+
+   def obter_curtidas(self):
+      return self.__curtidas
+
+
+
+class Perfil_Vip(Perfil):
+   'Classe padrão para perfis de usuários VIPs'
+
+   def __init__(self, nome, telefone, empresa, apelido):
+      super(Perfil_Vip, self).__init__(nome, telefone, empresa)
+      self.apelido = apelido
+
+   def obter_creditos(self):
+      return super(Perfil_Vip, self).obter_curtidas() * 10.0
+
+
 
 class Data(object):
    'Classe para formatar datas - Desafio Exercicio'
